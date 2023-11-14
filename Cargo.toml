@@ -10,4 +10,4 @@ rand = "0.8.5"
 
 [[bin]]
 name = "simple"
-path = "main.rs"
+path = "src/main.rs"

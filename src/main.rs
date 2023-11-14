@@ -14,7 +14,13 @@ fn main() {
             .read_line(&mut guess)
             .expect("Failed to read line");
 
-        let guess: u32 = match guess.trim().parse() {
+        let guess_trim = guess.trim();
+
+        if guess_trim == "exit" {
+            break;
+        }
+
+        let guess: u32 = match guess_trim.parse() {
             Ok(num) => num,
             Err(_) => continue,
         };
@@ -26,7 +32,7 @@ fn main() {
             std::cmp::Ordering::Greater => println!("Too big!"),
             std::cmp::Ordering::Equal => {
                 println!("You win!");
-                break   ;
+                break;
             }
         }
     }
